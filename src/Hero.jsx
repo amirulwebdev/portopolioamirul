@@ -10,7 +10,7 @@ const Hero = () => {
                 <h1 className="text-5xl lg:text-8xl font-bold font-inter">
                     Muhammad<br />Amirul
                 </h1>
-                <p className="text-base lg:text-4xl pt-6 font-bold font-cascadiacode">
+                <p className="text-base lg:text-3xl pt-6 font-bold font-inter">
                     Web Developer & Grapich Desainer
                 </p>
             </div>
