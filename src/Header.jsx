@@ -1,73 +1,97 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [showHeader, setShowHeader] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    const handleScroll = () => {
+        if (window.scrollY < 50) {
+            setShowHeader(true);
+        } else if (window.scrollY > lastScrollY) {
+            setShowHeader(false);
+        } else {
+            setShowHeader(true);
+        }
+        setLastScrollY(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
+    const navLinks = [
+        { href: '#beranda', label: '// beranda' },
+        { href: '#bio', label: '// bio' },
+        { href: '#pekerjaan', label: '// pekerjaan' },
+        { href: '#pengalaman', label: '// pengalaman' },
+        { href: '#kontak', label: '// kontak' },
+    ];
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-transparent text-white py-6">
+        <header
+            className={`fixed top-0 left-0 w-full z-50 bg-transparent bg-opacity-70 backdrop-blur text-white py-4 transition-transform duration-500 ${showHeader ? 'translate-y-0' : '-translate-y-full'
+                }`}
+        >
             <div className="flex justify-between items-center px-6">
-                {/* Tombol hamburger di kiri */}
+                {/* Hamburger Button */}
                 <button
                     onClick={() => setMenuOpen(!menuOpen)}
                     className="lg:hidden transition-transform duration-300 ease-in-out"
+                    aria-label="Toggle Menu"
                 >
                     {menuOpen ? <X size={32} /> : <Menu size={32} />}
                 </button>
 
-                {/* Nav Desktop */}
-                <div className="hidden lg:flex justify-center w-full pt-12">
-                    <nav className="flex space-x-10 font-cascadiacode font-semibold text-xl group">
-                        <a href="beranda" className="transition duration-300 group-hover:opacity-50 hover:opacity-100 hover:text-yellow-400">
-                            // beranda
+                {/* Desktop Navigation */}
+                <nav className="hidden lg:flex justify-center w-full pt-4 space-x-10 font-cascadiacode font-semibold text-lg">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            className="transition duration-300 group-hover:opacity-50 hover:opacity-100 hover:text-yellow-400"
+                        >
+                            {link.label}
                         </a>
-                        <a href="tentang" className="transition duration-300 group-hover:opacity-50 hover:opacity-100 hover:text-yellow-400">
-                            // bio
-                        </a>
-                        <a href="kontak" className="transition duration-300 group-hover:opacity-50 hover:opacity-100 hover:text-yellow-400">
-                            // pekerjaan
-                        </a>
-                        <a href="kontak" className="transition duration-300 group-hover:opacity-50 hover:opacity-100 hover:text-yellow-400">
-                            // pengalaman
-                        </a>
-                        <a href="kontak" className="transition duration-300 group-hover:opacity-50 hover:opacity-100 hover:text-yellow-400">
-                            // kontak
-                        </a>
-                    </nav>
-                </div>
+                    ))}
+                </nav>
             </div>
 
-            {/* Nav Mobile */}
+            {/* Mobile Navigation */}
             <div
-                className={`fixed top-0 left-0 h-screen w-[80%] bg-gray-100 text-black flex flex-col p-6 transition-transform duration-500 ease-in-out transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'
+                className={`fixed top-0 left-0 h-screen w-[80%] bg-white text-black flex flex-col p-6 transition-transform duration-500 ease-in-out transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
-                {/* Tombol Close */}
                 <button
                     onClick={() => setMenuOpen(false)}
                     className="mb-12 self-start z-50"
+                    aria-label="Close Menu"
                 >
                     <div className="bg-gray-200 p-2 rounded-full">
                         <X size={24} />
                     </div>
                 </button>
 
-                {/* Navigasi Mobile */}
-                <nav className="flex flex-col space-y-6 font-inter font-semibold text-lg text-left">
-                    <a href="#beranda" onClick={() => setMenuOpen(false)}>// home</a>
-                    <a href="#expertise" onClick={() => setMenuOpen(false)}>// keahlian</a>
-                    <a href="#work" onClick={() => setMenuOpen(false)}>// work</a>
-                    <a href="#experience" onClick={() => setMenuOpen(false)}>// experience</a>
-                    <a href="#contact" onClick={() => setMenuOpen(false)}>// contact</a>
+                <nav className="flex flex-col space-y-6 font-inter font-semibold text-lg">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {link.label}
+                        </a>
+                    ))}
                 </nav>
 
                 {/* Footer */}
-                <div className="mt-auto pt-12 text-sm text-black font-light">
+                <div className="mt-auto pt-12 text-sm text-gray-600 font-light">
                     <p>© 2025. Made with passion by Muhammad Amirul.</p>
                     <p>All rights reserved.</p>
                 </div>
             </div>
-
         </header>
     );
 };
