@@ -2,7 +2,7 @@ import React from 'react';
 
 const Work = () => {
     return (
-        <div id="pekerjaan" className="bg-white py-20 px-6 sm:px-8 lg:px-16">
+        <div id="pekerjaan" className="bg-white py-12 px-6 sm:px-8 lg:px-16">
             {/* Header Section */}
             <div className="max-w-4xl mx-auto text-center mb-16">
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">My Work</h2>
@@ -52,15 +52,6 @@ const Work = () => {
                             ))}
                         </div>
                     </div>
-                </div>
-
-                {/* Additional Projects Section */}
-                <div className="text-center mb-12">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">GET READOUT</h3>
-                    <div className="w-24 h-1 bg-purple-600 mx-auto mb-8"></div>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Lihat lebih banyak proyek yang telah saya kerjakan
-                    </p>
                 </div>
 
                 {/* More Projects Grid - Uncomment when you have more projects */}

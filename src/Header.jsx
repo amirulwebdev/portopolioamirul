@@ -7,6 +7,20 @@ const Header = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isScrolled, setIsScrolled] = useState(false);
 
+    // Disable scroll when menu is open
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        // Cleanup function
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [menuOpen]);
+
     const handleScroll = () => {
         if (window.scrollY < 50) {
             setShowHeader(true);

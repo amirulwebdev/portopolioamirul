@@ -10,8 +10,7 @@ const Experience = () => {
             title: 'Processing Staff',
             period: '2024 – Present',
             locations: [
-                { name: 'Bariten, Indonesia', current: false },
-                { name: 'Infricet.id', current: true }
+                { name: 'Banten, Indonesia' }
             ],
             description: 'Melakukan penyortiran barang berdasarkan kode, pemindaian pickup, pengukuran dimensi, penempelan resi, serta berperan dalam proses pengiriman dan bongkar muat barang.',
             skills: ['Kerja sama tim', 'Logistik', 'Operational Guiding'],
@@ -20,22 +19,22 @@ const Experience = () => {
             id: 2,
             title: 'Web Developer',
             period: 'Mei 2024 – Jul 2024',
-            locations: [],
-            description: '',
-            skills: [],
+            locations: [{ name: 'Jakarta Selatan, Indonesia' }],
+            description: 'Mengembangkan website informasi sekolah menggunakan HTML, CSS, dan JavaScript, termasuk mendesain elemen visual seperti carousel dan banner PPDB untuk wilayah Bogor dan Palembang. Bertanggung jawab atas dokumentasi kode serta penyusunan panduan penggunaan, sekaligus mengelola dan merekap data pendaftar secara terstruktur.',
+            skills: ['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Tailwind', 'Laravel', 'Adobe Illustrator', 'Adobe Photoshop', 'Kerjasama Tim',],
         },
         {
             id: 3,
-            title: 'Mapping Web Developer',
+            title: 'Magang Web Developer',
             period: 'November 2023 – April 2024',
-            locations: [],
-            description: '',
-            skills: [],
+            locations: [{ name: 'Jakarta Selatan, Indonesia' }],
+            description: 'Aktif mempelajari pemrograman lanjutan, berkolaborasi dalam tim menggunakan metode Scrum, dan membangun pemahaman terhadap etika serta budaya kerja profesional.',
+            skills: ['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Tailwind', 'Laravel', 'Kerjasama Tim',],
         },
     ];
 
     return (
-        <div id="pengalaman" className="bg-white py-20 px-6 sm:px-8 lg:px-16">
+        <div id="pengalaman" className="bg-white pt-12 pb-20 px-6 sm:px-8 lg:px-16">
             {/* Header Section */}
             <div className="max-w-4xl mx-auto text-center mb-16">
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">Experience</h2>
@@ -52,8 +51,8 @@ const Experience = () => {
                             key={exp.id}
                             onClick={() => setActiveTab(index)}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeTab === index
-                                    ? 'bg-purple-600 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                ? 'bg-purple-600 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                 }`}
                         >
                             {exp.title}
@@ -118,14 +117,6 @@ const Experience = () => {
                             )}
                         </div>
                     ))}
-                </div>
-
-                {/* Divider */}
-                <div className="w-full h-px bg-gray-200 my-12"></div>
-
-                {/* Additional Info */}
-                <div className="text-center text-gray-500 text-sm">
-                    <p>More experiences and details available upon request</p>
                 </div>
             </div>
         </div>

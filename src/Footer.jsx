@@ -22,10 +22,10 @@ const Footer = () => {
                             Tertarik untuk bekerja sama? Silakan hubungi saya untuk mendiskusikan lebih lanjut. CV saya tersedia untuk ditinjau.
                         </p>
                         <div className="flex justify-center sm:justify-start">
-                            <button className="group flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-purple-800 px-6 py-3 rounded-full transition-all duration-300 ease-in-out text-sm font-semibold">
+                            <a href='./public/MuhammadAmirul.pdf' className="group flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-purple-800 px-6 py-3 rounded-full transition-all duration-300 ease-in-out text-sm font-semibold">
                                 <span>Lihat CV saya</span>
                                 <File size={20} className="opacity-80 group-hover:opacity-100 transition-opacity" />
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
