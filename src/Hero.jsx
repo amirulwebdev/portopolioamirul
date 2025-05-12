@@ -3,14 +3,14 @@ import { ArrowBigDownDash } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section id="beranda" className="relative py-24 sm:py-32 bg-white text-slate-50 overflow-hidden">
+        <section id="beranda" className="relative py-24 lg:py-32 bg-white text-slate-50 overflow-hidden">
             {/* Background Blurs */}
             <div className="hidden sm:block absolute -top-32 -left-32 w-72 h-72 bg-purple-900 opacity-20 rounded-full blur-3xl"></div>
             <div className="hidden sm:block absolute top-24 right-24 w-72 h-72 bg-purple-600 opacity-20 rounded-full blur-3xl"></div>
 
             {/* Hero Content */}
-            <div className="text-center uppercase px-6 sm:px-0 text-black font-inter">
-                <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold leading-tight">
+            <div className="text-center uppercase px-6 sm:px-0  text-black font-inter">
+                <h1 className="mt-12 text-4xl sm:text-6xl lg:text-8xl font-bold leading-tight">
                     Muhammad<br />Amirul
                 </h1>
                 <p className="text-lg sm:text-xl lg:text-3xl pt-4 font-bold">

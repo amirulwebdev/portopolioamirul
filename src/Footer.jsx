@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Twitter, File } from 'lucide-react';
+import { Mail, Linkedin, Github, File } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -46,13 +46,13 @@ const Footer = () => {
 
                     {/* Social Icons */}
                     <div className="flex justify-center gap-6 text-white text-xl mb-6">
-                        <a href="#"><Twitter className="w-5 h-5 hover:text-teal-300 transition-colors" /></a>
-                        <a href="#"><Linkedin className="w-5 h-5 hover:text-teal-300 transition-colors" /></a>
-                        <a href="#"><Mail className="w-5 h-5 hover:text-teal-300 transition-colors" /></a>
+                        <a href="https://github.com/amirulwebdev"><Github className="w-5 h-5 hover:text-teal-300 transition-colors" /></a>
+                        <a href="https://www.linkedin.com/in/muhammadamirul-8060b2285/"><Linkedin className="w-5 h-5 hover:text-teal-300 transition-colors" /></a>
+                        <a href="https://muhammadamirul05.am@gmail.com"><Mail className="w-5 h-5 hover:text-teal-300 transition-colors" /></a>
                     </div>
 
                     {/* Footer Text */}
-                    <p id='kontak' className="text-sm text-white/70">Handcrafted by me © twenty twenty four</p>
+                    <p id='kontak' className="text-sm text-white/70">Handcrafted by me © twenty twenty five</p>
                 </div>
             </div>
         </div>
