@@ -32,26 +32,26 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 bg-transparent bg-opacity-70 backdrop-blur text-white py-4 transition-transform duration-500 ${showHeader ? 'translate-y-0' : '-translate-y-full'
-                }`}
+            className={`fixed pt-6 top-0 left-0 w-full z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'
+                } bg-transparent`}
         >
-            <div className="flex justify-between items-center px-6">
+            <div className="flex justify-between items-center px-6 py-4">
                 {/* Hamburger Button */}
                 <button
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="lg:hidden transition-transform duration-300 ease-in-out"
+                    className="lg:hidden text-purple-700 transition-transform duration-300 ease-in-out"
                     aria-label="Toggle Menu"
                 >
                     {menuOpen ? <X size={32} /> : <Menu size={32} />}
                 </button>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex justify-center w-full pt-4 space-x-10 font-cascadiacode font-semibold text-lg">
+                <nav className="hidden lg:flex justify-center w-full space-x-10 font-cascadiacode font-semibold text-lg">
                     {navLinks.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
-                            className="transition duration-300 group-hover:opacity-50 hover:opacity-100 hover:text-yellow-400"
+                            className="text-black transition duration-300 hover:text-purple-500"
                         >
                             {link.label}
                         </a>
@@ -61,25 +61,28 @@ const Header = () => {
 
             {/* Mobile Navigation */}
             <div
-                className={`fixed top-0 left-0 h-screen w-[80%] bg-white text-black flex flex-col p-6 transition-transform duration-500 ease-in-out transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'
+                className={`fixed top-0 left-0 h-screen w-[80%] bg-black text-white flex flex-col p-6 transition-transform duration-500 ease-in-out transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
+                {/* Close Button */}
                 <button
                     onClick={() => setMenuOpen(false)}
                     className="mb-12 self-start z-50"
                     aria-label="Close Menu"
                 >
-                    <div className="bg-gray-200 p-2 rounded-full">
+                    <div className="bg-purple-700 p-2 rounded-full text-white">
                         <X size={24} />
                     </div>
                 </button>
 
+                {/* Mobile Nav Links */}
                 <nav className="flex flex-col space-y-6 font-inter font-semibold text-lg">
                     {navLinks.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
                             onClick={() => setMenuOpen(false)}
+                            className="hover:text-purple-400 transition duration-300"
                         >
                             {link.label}
                         </a>
@@ -87,7 +90,7 @@ const Header = () => {
                 </nav>
 
                 {/* Footer */}
-                <div className="mt-auto pt-12 text-sm text-gray-600 font-light">
+                <div className="mt-auto pt-12 text-sm text-gray-500 font-light">
                     <p>© 2025. Made with passion by Muhammad Amirul.</p>
                     <p>All rights reserved.</p>
                 </div>

@@ -1,62 +1,76 @@
 import React from 'react';
+import { Laptop, Atom } from 'lucide-react';
 
 const Bio = () => {
     return (
-        <section id="bio" className="py-20 bg-black text-white">
-            {/* Perkenalan */}
-            <div className="px-6 sm:px-12 lg:px-64 text-center font-inter">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
-                    Hi, saya Muhammad Amirul
-                </h2>
-                <p className="text-sm sm:text-base lg:text-xl text-slate-300 text-justify font-medium leading-relaxed">
-                    Saya adalah Web Developer pemula dengan 9 bulan pengalaman menggunakan HTML, CSS, dan JavaScript.
-                    Terbiasa mengerjakan proyek web secara tim maupun mandiri, seperti website sekolah dan sistem internal.
-                    Lulusan Manajemen Informatika dan bersertifikasi BNSP. Siap berkembang dan berkontribusi di dunia web modern.
-                </p>
-            </div>
+        <div id='bio' className="relative bg-white">
+            {/* Purple background for top section */}
+            <div className="bg-gradient-to-r from-purple-700 to-purple-600 pt-24 pb-32 text-white">
+                <div className="container mx-auto px-6 sm:px-8 lg:px-16">
+                    {/* Introduction Section */}
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
+                            Hi, saya Muhammad Amirul
+                        </h2>
+                        <p className="text-base sm:text-lg lg:text-xl text-white/90 text-center leading-relaxed font-medium">
+                            Saya adalah Web Developer pemula dengan 9 bulan pengalaman menggunakan HTML, CSS, dan JavaScript.
+                            Terbiasa mengerjakan proyek web secara tim maupun mandiri, seperti website sekolah dan sistem internal.
+                            Lulusan Manajemen Informatika dan bersertifikasi BNSP. Siap berkembang dan berkontribusi di dunia web modern.
+                        </p>
+                    </div>
 
-            {/* Divider */}
-            <div className="mt-20 text-center px-6">
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold">My Expertise</h3>
-                <p className="text-gray-400 mt-2 text-sm sm:text-base">Kemampuan utama yang saya kuasai</p>
-            </div>
-
-            {/* Card Keahlian */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 px-6 sm:px-10 lg:px-32 mt-12 max-w-7xl mx-auto">
-                {/* Card 1 */}
-                <div className="border border-gray-600 p-6 rounded-xl bg-gray-900 shadow-md hover:shadow-pink-500/20 transition-shadow">
-                    <div className="text-3xl sm:text-4xl mb-4">💻</div>
-                    <h4 className="text-xl sm:text-2xl font-bold mb-2">
-                        <span className="border-b-4 border-pink-500">Software</span> Development
-                    </h4>
-                    <p className="text-gray-300 text-sm sm:text-base mt-2 border-l-2 pl-4 border-gray-500 leading-relaxed">
-                        Terbiasa dengan paradigma fungsional dan OOP:  PHP, JavaScript, dan TypeScript.
-                    </p>
+                    {/* Expertise Header */}
+                    <div className="mt-24 text-center">
+                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold">My Expertise</h3>
+                        <p className="text-white/80 mt-4 text-lg font-medium">
+                            Kemampuan utama yang saya kuasai
+                        </p>
+                    </div>
                 </div>
-
-                {/* Card 2 */}
-                <div className="border border-gray-600 p-6 rounded-xl bg-gray-900 shadow-md hover:shadow-blue-500/20 transition-shadow">
-                    <div className="text-3xl sm:text-4xl mb-4">⚛️</div>
-                    <h4 className="text-xl sm:text-2xl font-bold mb-2">
-                        <span className="border-b-4 border-blue-500">Frontend Dev</span><br />React & NextJS
-                    </h4>
-                    <p className="text-gray-300 text-sm sm:text-base mt-2 border-l-2 pl-4 border-gray-500 leading-relaxed">
-                        Antusias dalam UI/UX. Familiar dengan HTML, CSS, JavaScript serta framework React dan Next.js.
-                    </p>
-                </div>
-
-                {/* Card 3 */}
-                {/* <div className="border border-gray-600 p-6 rounded-xl bg-gray-900 shadow-md hover:shadow-orange-500/20 transition-shadow">
-                    <div className="text-3xl sm:text-4xl mb-4">📱</div>
-                    <h4 className="text-xl sm:text-2xl font-bold mb-2">
-                        <span className="border-b-4 border-orange-500">Flutter Dev</span><br />Android & iOS
-                    </h4>
-                    <p className="text-gray-300 text-sm sm:text-base mt-2 border-l-2 pl-4 border-gray-500 leading-relaxed">
-                        Mampu membuat aplikasi mobile hybrid dan cross-platform menggunakan framework Flutter.
-                    </p>
-                </div> */}
             </div>
-        </section>
+
+            {/* Skills Cards Section */}
+            <div className="container mx-auto px-6 sm:px-8 lg:px-16 -mt-20 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    {/* Card 1 - Software Development */}
+                    <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-lg transition-all">
+                        <div className="flex items-start space-x-6">
+                            <div className="flex-shrink-0 w-16 h-16 rounded-full bg-purple-700 flex items-center justify-center text-white">
+                                <Laptop size={28} />
+                            </div>
+                            <div>
+                                <h4 className="text-xl sm:text-2xl font-bold mb-3 text-gray-800">
+                                    <span className="pb-1 border-b-2 border-pink-500">Software</span> Development
+                                </h4>
+                                <p className="text-gray-600 text-base leading-relaxed">
+                                    Terbiasa dengan paradigma fungsional dan OOP: PHP, JavaScript, dan TypeScript.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Card 2 - Frontend Development */}
+                    <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-lg transition-all">
+                        <div className="flex items-start space-x-6">
+                            <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                                <Atom size={28} />
+                            </div>
+                            <div>
+                                <h4 className="text-xl sm:text-2xl font-bold mb-3 text-gray-800">
+                                    <span className="pb-1 border-b-2 border-blue-500">Frontend Dev</span> React & NextJS
+                                </h4>
+                                <p className="text-gray-600 text-base leading-relaxed">
+                                    Antusias dalam UI/UX. Familiar dengan HTML, CSS, JavaScript serta framework React dan Next.js.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom spacing */}
+            <div className="pt-24"></div>
+        </div>
     );
 };
 

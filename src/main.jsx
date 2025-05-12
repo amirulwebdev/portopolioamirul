@@ -5,6 +5,8 @@ import Header from './Header'
 import Bio from './Bio'
 import Hero from './Hero'
 import Work from './Work'
+import Pengalaman from './Pengalaman'
+import Footer from './Footer'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -12,5 +14,7 @@ createRoot(document.getElementById('root')).render(
     <Hero />
     <Bio />
     <Work />
+    <Pengalaman />
+    <Footer />
   </StrictMode>,
 )
